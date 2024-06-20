@@ -118,11 +118,14 @@ function listar_propiedades(list_propiedades, tipo_prop, max){
                             `<p class='${smoke_success}'><i class='fas fa-smoking'></i> ${smoke}</p>` + // Smoke
                             `<p class='${pet_success}'><i class='fas fa-paw'></i> ${pets}</p></div></div></div>` // Pets
 
+            count++
             if (max > 0){
-                count++
                 if (count >= max){
                     break
                 }
+            } else if (count >= 3) {
+                inner_html += "</div><div class='row'>"
+                count = 0
             }
             
         }
